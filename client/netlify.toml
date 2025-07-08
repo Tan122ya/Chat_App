@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  # Redirect all frontend routes to index.html (SPA support)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  # Proxy API calls to your backend server
+  from = "/api/*"
+  to = "https://chat-app-j7kf.onrender.com/api/:splat"
+  status = 200
+  force = true
